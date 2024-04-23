@@ -29,8 +29,8 @@ paths:
               $ref: '#/components/schemas/Product'
         required: true
       responses:
-        '204':
-          description: Successful operation
+        '201':
+          description: Created
         '400':
           description: Invalid input
         '422':
@@ -51,6 +51,34 @@ paths:
       responses:
         '204':
           description: Successful operation
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+  /products/{code}:
+    get:
+      tags:
+        - Products
+      summary:  Find prodcut by code
+      description: Find prodcut by code
+      operationId: findProduct
+      parameters:
+        - name: codeProduct
+          in: path
+          description: Code of product to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
         '400':
           description: Invalid input
         '422':
@@ -272,7 +300,7 @@ components:
           format: int64
           example: 10
           description: Product id
-        employeeId*:
+        employeeId:
           type: integer
           format: int64
           example: 10
@@ -299,10 +327,10 @@ components:
         barcodeType:
           type: string
           example: code128
-        boxId*:
+        boxId:
           type: string
           example: common box
-        unitId*:
+        unitId:
           type: string
           example: piezas
         price:
@@ -320,15 +348,13 @@ components:
           type: boolean
           example: true
           description: Product status
-        taxes:
-          type: object
-          properties:
-            percentage: 
-              type: string
-              example: 18
-            method*: 
-              type: string
-              example: INCLUSIVO
+        percentageTax:
+          type: boolean
+          example: 18
+          description: Percentage of purchase taxes.
+        methodTax:
+          type: boolean
+          example: INCLUSIVO
     Category:
       required:
         - name
