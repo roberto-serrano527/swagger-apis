@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+  title: Swagger Purchase - OpenAPI 3.0
+  description: |-
+    This specification can help you learn more about the Purchase API.
+  contact:
+    email: roberto_sh_17@hotmail.com
+  version: 0.0.1
+servers:
+  - url: localhost:8080/api/v1
+tags:
+  - name: Purchases
+    description: Everything about Purchases
+paths:
+  /purchases:
+    post:
+      tags:
+        - Purchases
+      summary: Add a new purchase to the store
+      description: Add a new purchase to the store
+      operationId: addPurchase
+      requestBody:
+        description: Create a new purchase in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purchase'
+        required: true
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+components:
+  schemas:
+    Purchase:
+      required:
+        - reference
+        - supplierId
+        - products
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1085
+          description: Purchase id
+        reference:
+          type: string
+          example: d4344d66-2b59-49ca-a236-6804d4c9e136
+          description: Purchase reference
+        supplierId:
+          type: integer
+          example: 63246557
+        comment:
+          type: string
+          example: Cambiar de proveedor
+          description: Small note about the purchase.
+        createAt:
+          type: string
+          example: 24-04-2024
+          description: Creation date in mm-dd-yyyy format
+        paymentMethodId:
+          type: string
+          example: Efectivo
+          description: Payment Method id
+        tax:
+          type: string
+          example: 15
+          description: Tax to pay
+        discount:
+          type: string
+          example: 2.5
+          description: purchase discount
+        products:
+          type: array
+          required:
+            - code
+          items:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 06502550
+                description: Product code
+              name:
+                type: string
+                example: Petalo 8 rollos
+              quantity:
+                type: integer
+                example: 8
+              unitCost: 
+                type: integer
+                example: 25.6
+              
+    
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
