@@ -1,0 +1,171 @@
+openapi: 3.0.3
+info:
+  title: Swagger Catalogs - OpenAPI 3.0
+  description: |-
+    This specification contains everything about catalogs.
+  contact:
+    email: roberto_sh_17@hotmail.com
+  version: 0.0.1
+servers:
+  - url: localhost:8080/api/v1
+tags:
+  - name: Catalogs
+    description: Everything about catalogs
+paths:
+  /categories:
+    get:
+      tags:
+        - Catalogs
+      summary: Find all categories to the store
+      description: Find all categories to the store
+      operationId: findCategories
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryOut'
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+  /suppliers:
+    get:
+      tags:
+        - Catalogs
+      summary: Find all suppliers to the store
+      description: Find all suppliers to the store
+      operationId: findSuppliers
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupplierOut'
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+  /brands:
+    get:
+      tags:
+        - Catalogs
+      summary: Find all categories to the store
+      description: Find all categories to the store
+      operationId: findCategory
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryOut'
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+  /boxes:
+    get:
+      tags:
+        - Catalogs
+      summary: Find all categories to the store
+      description: Find all categories to the store
+      operationId: findCategory
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryOut'
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+  /units:
+    get:
+      tags:
+        - Catalogs
+      summary: Find all categories to the store
+      description: Find all categories to the store
+      operationId: findCategory
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryOut'
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+components:
+  schemas:
+    CategoryOut:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 26
+        name:
+          type: string
+          example: Higiene bucal
+        fatherCategory:
+          type: string
+          example: higiene
+          description: Hierarchically higher category
+        boxId:
+          type: string
+          example: common box
+        description:
+          type: string
+          example: Categoria para productos de higiene bucal.
+          description: Category description
+        status:
+          type: boolean
+          example: true
+          description: Category status
+    SupplierOut:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 26
+        name:
+          type: string
+          example: Bimbo
+        code:
+          type: integer
+          example: 980
+          description: Supplier code
+        email:
+          type: string
+          example: proveedor@bimbo.com
+        address:
+          type: string
+          example: Av. Insurgentes Sur 3975, Tlalpan, CDMX.
+        description:
+          type: string
+          example: Bimbo
+          description: Supplier description
+        status:
+          type: boolean
+          example: true
+          description: Supplier status
+
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

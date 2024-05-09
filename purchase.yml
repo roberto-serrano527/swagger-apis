@@ -94,7 +94,6 @@ components:
               unitCost: 
                 type: integer
                 example: 25.6
-              
     
   securitySchemes:
     petstore_auth:

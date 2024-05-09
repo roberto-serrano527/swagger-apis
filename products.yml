@@ -34,7 +34,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericResponse'
+                $ref: '#/components/schemas/ProductResponsePost'
         '400':
           description: Invalid input
         '422':
@@ -107,11 +107,41 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Category'
+              $ref: '#/components/schemas/CategoryIn'
         required: true
       responses:
-        '204':
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryOutPost'
+        '400':
+          description: Invalid input
+        '422':
+          description: Validation exception
+  /categories/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          description: Find category by id
+          required: true
+          schema:
+            type: integer
+            format: int64
+      tags:
+        - Categories
+      summary: Add a new category to the store
+      description: Add a new category to the store
+      operationId: findCategory
+      responses:
+        '200':
           description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryOut'
         '400':
           description: Invalid input
         '422':
@@ -143,7 +173,7 @@ components:
         code:
           type: integer
           example: 06502550
-          description: Product id
+          description: Product code
         categoryId:
           type: string
           example: aec96f3b-ec3d-42b0-91bd-c680c44a123a
@@ -186,8 +216,17 @@ components:
           example: INCLUSIVO
     ProductIn:
       required:
+        - employeeId
+        - productType
         - name
-        - photoUrls
+        - code
+        - categoryId
+        - supplierId
+        - brandId
+        - barcodeType
+        - boxId
+        - unitId
+        - price
       type: object
       properties:
         employeeId:
@@ -245,39 +284,61 @@ components:
         methodTax:
           type: boolean
           example: INCLUSIVO
-    Category:
+    CategoryIn:
       required:
         - name
-        - photoUrls
+        - boxId
+      type: object
+      properties:
+        name:
+          type: string
+          example: Higiene bucal
+        fatherCategory:
+          type: string
+          example: higiene
+          description: Hierarchically higher category
+        boxId:
+          type: string
+          example: common box
+        description:
+          type: string
+          example: Categoria para productos de higiene bucal.
+          description: Category description
+        status:
+          type: boolean
+          example: true
+          description: Category status
+    CategoryOutPost:
       type: object
       properties:
         id:
           type: integer
-          format: int64
-          example: 10
+          example: 26
+    CategoryOut:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 26
         name:
           type: string
-          example: doggie
-        category:
-          $ref: '#/components/schemas/Category'
-        photoUrls:
-          type: array
-          xml:
-            wrapped: true
-          items:
-            type: string
-            xml:
-              name: photoUrl
-        status:
+          example: Higiene bucal
+        fatherCategory:
           type: string
-          description: pet status in the store
-          enum:
-            - available
-            - pending
-            - sold
-      xml:
-        name: pet
-    GenericResponse:
+          example: higiene
+          description: Hierarchically higher category
+        boxId:
+          type: string
+          example: common box
+        description:
+          type: string
+          example: Categoria para productos de higiene bucal.
+          description: Category description
+        status:
+          type: boolean
+          example: true
+          description: Category status
+    ProductResponsePost:
       type: object
       properties:
         id:
@@ -288,6 +349,13 @@ components:
           type: integer
           format: int32
           example: 6502550
+    GenericResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          example: 10
 
   securitySchemes:
     petstore_auth:

@@ -31,6 +31,10 @@ services:
       DB_DATABASE: raccoon_db
       DB_USERNAME: root
       DB_PASSWORD: sasa
+      #create – Hibernate first drops existing tables and then creates new tables.
+      #validate – Hibernate only validates whether the tables and columns exist; otherwise, it throws an exception.
+      #https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
+      JPA_DDL_AUTO: create
     networks:
       - spring
     depends_on:
