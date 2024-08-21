@@ -1,21 +1,30 @@
-#👔Etrevistas backend java👔
+# 👔Etrevistas backend java👔
 
-##✒️Resumen laboral
+## ✒️Resumen laboral
 
-###Domi
+Utiliza el método STAR (Situación, Tarea, Acción, Resultado)
+
+### Domi
 Trabaje un año en el proyecto de domiciliaciones desarrollando servicios sencillos y dando soporte a la aplicacion.
 
-###Azteca 360
+### Azteca 360 
+(Detalla el proceso desde el análisis hasta el mantenimiento, incluyendo cualquier problema que surgió y cómo lo resolviste.)
 Posteriormente participe en un proyecto nuevo que es una plataforma de pagos que expone medios de pago para instituciones internas y externas al grupo, dentro de mis funciones eran realizar servicios, realizar pruebas y estaba encargado de administrar las API Proxies del proyecto desde el analisis, creacion, pruebas, liberacion y mantenimiento asi como el acompañamiento a los clientes que se fueron integrando. Los utimos meses trabaje en una migracion de Tibco a spring boot.
 Las tecnologias que utilice para el desarrollo de los microservicios son Spring Boot con Java 8, para la documentacion swagger y para las pruebas JUnit, Docker y JMeter de lado de APIGEE ocupaba swagger con open api 2.0 para la creacion de yaml, apigee, utilizabamos la estrategia de api first. En ambas tareas utilizaba git para el manejo de versiones y la integracion continua, asi como jira y confluence para el manejo de las historias de usuraio.
 
-###Kairos (Santanter)
+### Kairos (Santanter)
+Trabajé desarrollando microservicios con Spring Boot 3 y Java 17 en un proyecto de crédito. Los servicios que desarrollé incluyen un microservicio para la generación de contratos, una librería para el manejo de errores, e implementamos Kafka para la mejora de los tiempos de respuesta de los servicios de una aplicación de solicitud de tarjeta de crédito. (Explicar por qué se eligió Kafka, cómo se implementó y los beneficios obtenidos.)
+
+### Ejemplos de retos en mi carrera
+Aprender y capasitarme en nuevas tecnologias son retos importantes en mi carrera pero es algo que me gusta hacer, por ejemplo, con APIGEE nos dieron una capasaitacion muy basica y tuve que leer mucho la documentación para entender mejor los procesos. 
+
+### 5 Habilidades y debilidades
 ✍
 
 ---
-##☕Java Puro
+## ☕Java Puro
 
-###Programación orientada a objetos
+### Programación orientada a objetos
 
 >Paradigma de programación que parte del concepto de "objetos" como base.
 
@@ -79,7 +88,7 @@ La directiva static permite el acceso a métodos y variables de clase sin la nec
 - Inferencia de tipos en datos primitivos.
 - Metodo estatico of en colecciones.
 ---
-##🍃SPRING
+## 🍃SPRING
 
 **Spring**: Framework de java para delegar tarear repetitivas. Con el uso de anotaciones.
 **Spring boot**: Proyecto basado en Spring para la creacion de aplicaciones autocontenidas. Contiene propio servidor de aplicaciones embebido e icluye gestor de dependencias como Gradle y Maven.
@@ -87,8 +96,8 @@ La directiva static permite el acceso a métodos y variables de clase sin la nec
 **Spring security**: Autenticacion, autorizacion y gestion de seguridad. Autenticacion por JWT.
 
 **Inyección de dependencias**:
-"Principio de diseño" utilizado para tener una alta cohesión y bajo acoplamiento. Sus principales funciones es no tener que instanciar un objeto hasta el momento que se requiera y desacoblar del objeto mediante interfaces respetando asi "Open/Close" de SOLID.
-Se puede inyectar una dependencia mediante las anotaciones @Autowired @Inject y @Qualifier o utilizando el constructor de la clase que lo utilizara.
+Principio de diseño utilizado para lograr una alta cohesión y un bajo acoplamiento. Sus principales funciones son evitar la instanciación de un objeto hasta que se requiera y desacoplar del objeto mediante interfaces, respetando así el principio de "Open/Close" de SOLID.
+Se puede inyectar una dependencia mediante las anotaciones @Autowired, @Inject y @Qualifier, o utilizando el constructor de la clase que lo utilizará.
 https://www.youtube.com/watch?v=_zBYWFo2l78
 
 **Inversión de Control**:
@@ -100,7 +109,7 @@ https://www.youtube.com/watch?v=_zBYWFo2l78
 **Dependencia**: 
 ✍
 
-###Anotaciones
+### Anotaciones
 
 **Estereotipos**
 - **@Component**: Anotacion general (padre) de estereotipos. Es para implem       entaciones mas generales como clases de seguridad.
@@ -132,12 +141,12 @@ https://www.youtube.com/watch?v=_zBYWFo2l78
 
 ---
 
-##💬Kafka
+## 💬Kafka
 ✍
 
 ---
 
-##📌Adicionales
+## 📌Adicionales
 
 **Git**: Control de versiones
 
@@ -166,9 +175,9 @@ https://www.youtube.com/watch?v=_zBYWFo2l78
 **Microservicios**: Es un enfoque de arquitectura donde se cubren necesidades particulares de un contexto.
 
 ---
-##📐Patrones de diseño
+## 📐Patrones de diseño
 
-###Patrones creacionales
+### Patrones creacionales
 > Estos patrones proporcionan mecanismos de creación de objetos que incrementan la flexibilidad y la reutilización del código existente.
 - Builder
   - El patrón nos permite producir distintos tipos y representaciones de un objeto empleando el mismo código de construcción.
@@ -185,7 +194,7 @@ https://www.youtube.com/watch?v=_zBYWFo2l78
 - Factory
 - Abstract Factory
 
-###Patrones estructurales
+### Patrones estructurales
 > Estos patrones explican cómo ensamblar objetos y clases en estructuras más grandes, mientras se mantiene la flexibilidad y eficiencia de la estructura.
 - Proxy
 - Adapter
@@ -199,7 +208,7 @@ https://www.youtube.com/watch?v=_zBYWFo2l78
 - Observer
 
 ---
-##🤔Preguntas Frecuentes
+## 🤔Preguntas Frecuentes
 
 **¿Que hacer cuando algo falla en produccion?**
     Replicar el error en desarrollo
