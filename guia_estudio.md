@@ -93,7 +93,7 @@ La directiva static permite el acceso a métodos y variables de clase sin la nec
 - Sealed Classes: Permiten restringir qué clases pueden extender o implementar una clase o interfaz.
 - Mejora en instanceof: Ahora, puedes evitar hacer un casting explícito después de usar instanceof. Si la condición de instanceof es verdadera, automáticamente puedes usar la variable en el bloque.
 
-´´
+```
 Object obj = "Hello, Java!";
 
 //Antes
@@ -106,7 +106,7 @@ if (obj instanceof String) {
 if (obj instanceof String str) {  // Pattern Matching
     System.out.println(str.toUpperCase());
 }
-´´
+```
 
 ---
 ##  🍃SPRING
