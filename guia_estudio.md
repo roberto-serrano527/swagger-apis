@@ -195,6 +195,28 @@ https://www.youtube.com/watch?v=_zBYWFo2l78
 
 **Microservicios**: Es un enfoque de arquitectura donde se cubren necesidades particulares de un contexto.
 
+## JWT
+
+### ¿Qué es?
+Es un token utilizado para la autenticación de usuarios.
+
+### ¿Qué partes componen un JWT?
+- Header: Contiene el algoritmo de cifrado.
+- Payload: Contiene el mensaje a compartir.
+- Signature: Clave/Contraseña y la conbinación de header y payload.
+
+### ¿Cómo se genera un JWT en un microservicio con spring?
+
+1. Clase para generar y firmar el token JWT.
+2. Validar las credenciales (por ejemplo, en un AuthenticationManager), generar el JWT y lo devuelverlo al cliente.
+
+### ¿Cómo validas un JWT en un microservicio con spring?
+
+1. Se crea una clase component donde que decodifica y extrae la información.
+2. Se crea filter donde interceptas las solicitudes.
+   - Se valida token
+3. Se incluye el filter en spring security (clase config).
+
 ---
 ##  📐Patrones de diseño
 
