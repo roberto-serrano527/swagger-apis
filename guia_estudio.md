@@ -55,20 +55,20 @@ Aprender y capasitarme en nuevas tecnologias son retos importantes en mi carrera
 
 
 **¿Qué es una lambda?**
-Un lambda es un concepto relacionado con la programación funcional que se definió en Java 8 para tratar de dotar a Java de un paradigma funcional que difiere del paradigma de la 
-programación imperativa.
+Una lambda es una función anónima o expresión que se puede definir sin necesidad de un nombre, utilizada principalmente para simplificar la escritura de código en ciertos contextos donde solo se necesita una pequeña función, como en el manejo de eventos, filtros o iteraciones sobre colecciones.
+- Se introdujeron a partir de Java 8
 
-**Supplier**: Es una interfaz funcional que no toma argumentos y devuelve un resultado de tipo T. Se utiliza para generar valores de forma perezosa o diferida. La interfaz Supplier 
-tiene un único método llamado get() que devuelve un valor de tipo T1.
+**Supplier**: Es una interfaz funcional que no recibe argumentos y devuelve un resultado de tipo T. Se utiliza para generar valores de forma perezosa o diferida. La interfaz Supplier 
+tiene un único método llamado get() que devuelve un valor de tipo T.
 
 **Consumer**: Es una interfaz funcional que toma un argumento de tipo T y no devuelve ningún resultado. Se utiliza para realizar operaciones con el objeto de tipo T, como imprimirlo 
-en la consola o almacenarlo en una base de datos. La interfaz Consumer tiene un único método llamado accept(T t)1.
+en la consola o almacenarlo en una base de datos. La interfaz Consumer tiene un único método llamado accept(T t). Ejem. forEach() para realizar una acción en cada elemento, como imprimir.
 
 **Predicate**: Es una interfaz funcional que toma un argumento de tipo T y devuelve un valor booleano. Se utiliza para evaluar una condición sobre el objeto de tipo T. 
-La interfaz Predicate tiene un único método llamado test(T t)1.
+La interfaz Predicate tiene un único método llamado test(T t). Ejem. el método filter() para filtrar elementos de un Stream basándose en una condición.
 
 **Function**: Es una interfaz funcional que toma un argumento de tipo T y devuelve un resultado de tipo R. Se utiliza para transformar objetos de tipo T en objetos de tipo R. 
-La interfaz Function tiene un único método llamado apply(T t)1.
+La interfaz Function tiene un único método llamado apply(T t). Ejem. el método map() para transformar elementos de un Stream, como convertir cadenas a sus longitudes.
 
 
 **¿Qué es Java Stream?**
@@ -87,6 +87,27 @@ La directiva static permite el acceso a métodos y variables de clase sin la nec
 **Novedades de Java 11**
 - Inferencia de tipos en datos primitivos.
 - Metodo estatico of en colecciones.
+
+**Novedades de Java 17**
+- Records: Similar a lombook se agregan getters (aunque no comienza por get), equals(), toString() y hashCode().
+- Sealed Classes: Permiten restringir qué clases pueden extender o implementar una clase o interfaz.
+- Mejora en instanceof: Ahora, puedes evitar hacer un casting explícito después de usar instanceof. Si la condición de instanceof es verdadera, automáticamente puedes usar la variable en el bloque.
+
+´´
+Object obj = "Hello, Java!";
+
+//Antes
+if (obj instanceof String) {
+    String str = (String) obj;  // casting manual
+    System.out.println(str.toUpperCase());
+}
+
+//Mejora
+if (obj instanceof String str) {  // Pattern Matching
+    System.out.println(str.toUpperCase());
+}
+´´
+
 ---
 ##  🍃SPRING
 
