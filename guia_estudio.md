@@ -172,11 +172,11 @@ https://www.youtube.com/watch?v=_zBYWFo2l78
 **Git**: Control de versiones
 
 **5 principios S.O.L.I.D. de diseño de aplicaciones de software**
-- **S** – Single Responsibility Principle (SRP): Una clase debería tener una, y solo una, razón para cambiar.
-- **O** – Open/Closed Principle (OCP): Deberías ser capaz de extender el comportamiento de una clase, sin modificarla.
-- **L** – Liskov Substitution Principle (LSP): Las clases derivadas deben poder sustituirse por sus clases base.
-- **I** – Interface Segregation Principle (ISP): Haz interfaces que sean específicas para un tipo de cliente.
-- **D** – Dependency Inversion Principle (DIP): Depende de abstracciones, no de clases concretas.
+- **S** – Single Responsibility Principle (SRP): Principio de Responsabilidad Única: Cada clase o módulo debe tener una única responsabilidad o motivo de cambio. Esto ayuda a que el código sea más fácil de mantener y menos propenso a errores.
+- **O** – Open/Closed Principle (OCP): Principio de Abierto/Cerrado: Las entidades de software (clases, módulos, funciones) deben estar abiertas para extensión, pero cerradas para modificación. Esto significa que podemos agregar nuevas funcionalidades sin alterar el código existente.
+- **L** – Liskov Substitution Principle (LSP): Principio de Sustitución de Liskov: Las subclases deben ser sustituibles por sus clases base sin alterar el comportamiento esperado del programa. Esto asegura que el código funcione correctamente cuando se utiliza una subclase en lugar de su clase base.
+- **I** – Interface Segregation Principle (ISP): Principio de Segregación de Interfaces: Los clientes no deben estar obligados a depender de interfaces que no usan. Es mejor tener interfaces específicas y pequeñas en lugar de interfaces grandes y generales.
+- **D** – Dependency Inversion Principle (DIP): Principio de Inversión de Dependencias: Los módulos de alto nivel no deben depender de los módulos de bajo nivel, sino de abstracciones (interfaces). Esto permite que los módulos sean menos dependientes entre sí y facilita el cambio o la implementación de nuevas funcionalidades.
     
 **Maven**: Herramienta de software para la gestión y construcción de proyectos.
 
