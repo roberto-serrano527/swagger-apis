@@ -250,6 +250,18 @@ Es un token utilizado para la autenticación de usuarios.
 - Strategy
 - Observer
 
+### Patrones específicos de Microservicios
+> En sistemas distribuidos y basados en eventos, algunos patrones específicos son fundamentales:
+
+- Circuit Breaker:
+  - Este patrón evita que un servicio siga haciendo llamadas fallidas a otro servicio cuando éste está caído o responde lentamente. Es común en arquitecturas distribuidas para mejorar la resiliencia. Hystrix o Resilience4j son bibliotecas comunes que implementan este patrón.
+
+- Saga:
+  - Permite manejar transacciones distribuidas mediante la coordinación de varios pasos en diferentes servicios, de modo que, si uno de los pasos falla, cada servicio ejecuta una "acción compensatoria" para deshacer el trabajo realizado.
+
+- Event Sourcing:
+  - En lugar de almacenar solo el estado actual de una entidad, se almacenan todos los eventos que llevaron a ese estado. Esto facilita el seguimiento de cambios históricos y es útil para sistemas auditables o en aplicaciones financieras.
+
 ---
 ## 🤔Preguntas Frecuentes
 
