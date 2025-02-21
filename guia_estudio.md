@@ -112,8 +112,11 @@ if (obj instanceof String str) {  // Pattern Matching
 ##  🍃SPRING
 
 **Spring**: Framework de java para delegar tarear repetitivas. Con el uso de anotaciones.
+
 **Spring boot**: Proyecto basado en Spring para la creacion de aplicaciones autocontenidas. Contiene propio servidor de aplicaciones embebido e incluye gestor de dependencias como Gradle y Maven.
+
 **Spring data**: Proyecto para gestionar y usar bases de datos. A360 usa Srping data. Contiene otros proyectos como Spring Data JPA.
+
 **Spring security**: Autenticacion, autorizacion y gestion de seguridad. Autenticacion por JWT.
 
 **Inyección de dependencias**:
