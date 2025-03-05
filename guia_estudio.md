@@ -5,21 +5,33 @@
 Utiliza el método STAR (Situación, Tarea, Acción, Resultado)
 
 ###  Domi
-Trabaje un año en el proyecto de domiciliaciones desarrollando servicios sencillos y dando soporte a la aplicacion.
+Trabaje un año en el proyecto de domiciliaciones desarrollando servicios sencillos y dando soporte a la aplicación. 
 
 ###  Azteca 360
-(Detalla el proceso desde el análisis hasta el mantenimiento, incluyendo cualquier problema que surgió y cómo lo resolviste.)
-Posteriormente participe en un proyecto nuevo que es una plataforma de pagos que expone medios de pago para instituciones internas y externas al grupo, dentro de mis funciones eran realizar servicios, realizar pruebas y estaba encargado de administrar las API Proxies del proyecto desde el analisis, creacion, pruebas, liberacion y mantenimiento asi como el acompañamiento a los clientes que se fueron integrando. Los utimos meses trabaje en una migracion de Tibco a spring boot.
-Las tecnologias que utilice para el desarrollo de los microservicios son Spring Boot con Java 8, para la documentacion swagger y para las pruebas JUnit, Docker y JMeter de lado de APIGEE ocupaba swagger con open api 2.0 para la creacion de yaml, apigee, utilizabamos la estrategia de api first. En ambas tareas utilizaba git para el manejo de versiones y la integracion continua, asi como jira y confluence para el manejo de las historias de usuraio.
+(Detalla el proceso desde el análisis hasta el mantenimiento, incluyendo cualquier problema que surgió y cómo lo resolviste.) 
+Posteriormente participe en un proyecto nuevo que es una plataforma de pagos que expone medios de pago para instituciones internas y externas al grupo, dentro de mis funciones eran realizar servicios, realizar pruebas y estaba encargado de administrar las API Proxies del proyecto desde el análisis, creación, pruebas, liberación y mantenimiento así como el acompañamiento a los clientes que se fueron integrando. Los últimos meses trabaje en una migración de Tibco a spring boot. 
+Las tecnologías que utilice para el desarrollo de los microservicios son Spring Boot con Java 8, para la documentación swagger y para las pruebas JUnit, Docker y JMeter de lado de APIGEE ocupaba swagger con open api 2.0 para la creación de yaml, apigee, utilizábamos la estrategia de api first. En ambas tareas utilizaba git para el manejo de versiones y la integracion continua, asi como jira y confluence para el manejo de las historias de usuraio. 
 
 ###  Kairos (Santanter)
 Trabajé desarrollando microservicios con Spring Boot 3 y Java 17 en un proyecto de crédito. Los servicios que desarrollé incluyen un microservicio para la generación de contratos, una librería para el manejo de errores, e implementamos Kafka para la mejora de los tiempos de respuesta de los servicios de una aplicación de solicitud de tarjeta de crédito. (Explicar por qué se eligió Kafka, cómo se implementó y los beneficios obtenidos.)
 
 ### Ejemplos de retos en mi carrera
-Aprender y capasitarme en nuevas tecnologias son retos importantes en mi carrera pero es algo que me gusta hacer, por ejemplo, con APIGEE nos dieron una capasaitacion muy basica y tuve que leer mucho la documentación para entender mejor los procesos. 
+Aprender y capacitarme en nuevas tecnologías son retos importantes en mi carrera pero es algo que me gusta hacer, por ejemplo, con APIGEE nos dieron una capacitación muy básica y tuve que leer mucho la documentación para entender mejor los procesos. 
 
 ### 5 Habilidades y debilidades
-✍
+
+#### Habilidades
+
+- **Manejo de APIs y Arquitectura API-First:** Diseño y administración de APIs con Apigee, OpenAPI y Swagger, asegurando una integración eficiente.
+- **Resiliencia:** Capacidad de adaptación aprendiendo rápidamente nuevas tecnologías y ajustándome a cambios.
+- **Trabajo en Equipo:** Experiencia colaborando en equipos ágiles.
+- **Autodidacta:** He aprendido algunas tecnologías por mi cuenta capacitándome con cursos y documentación. 
+
+#### Debilidades
+
+- **Delegación de Tareas:** Suelo querer resolver todo por mi cuenta, pero estoy mejorando en confiar más en el equipo y distribuir responsabilidades.
+- **Experiencia con Frontend:** Mi enfoque ha sido backend, pero estoy explorando tecnologías frontend para comprender mejor el desarrollo full stack.
+- **Comunicación Técnica:** Explicar conceptos complejos a perfiles no técnicos me ha sido un reto, pero he mejorado documentando de manera clara y concisa de la mano con IA.
 
 ---
 ##  ☕Java Puro
