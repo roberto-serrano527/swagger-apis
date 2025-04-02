@@ -280,6 +280,9 @@ Es un token utilizado para la autenticación de usuarios.
 ---
 ## 🤔Preguntas Frecuentes
 
+**¿Qué es un API Gateway y cómo puede mejorar la arquitectura de microservicios?**
+    Es una puerta de entrada de peticiones a múltiples servicios, sirve como filtro, balanceo de carga, caching, autenticación, monitorización y para ofuscar las rutas de los servicios.
+
 **¿Que hacer cuando algo falla en produccion?**
     Replicar el error en desarrollo
 
