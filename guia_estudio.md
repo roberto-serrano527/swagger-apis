@@ -277,6 +277,15 @@ Es un token utilizado para la autenticación de usuarios.
 - Event Sourcing:
   - En lugar de almacenar solo el estado actual de una entidad, se almacenan todos los eventos que llevaron a ese estado. Esto facilita el seguimiento de cambios históricos y es útil para sistemas auditables o en aplicaciones financieras.
 
+- Retry:
+ - Reintentar automáticamente llamadas fallidas a un servicio externo, especialmente en casos de fallos transitorios (como problemas de red temporales).
+
+- Bulkhead:
+ - Divide recursos para evitar que un fallo en una parte afecte a todo el sistema. 
+
+- Rate Limiting:
+ - Controlar la cantidad de solicitudes que un servicio puede recibir en un período de tiempo determinado.
+
 ---
 ## 🤔Preguntas Frecuentes
 
