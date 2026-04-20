@@ -7,13 +7,16 @@ Utiliza el método STAR (Situación, Tarea, Acción, Resultado)
 ###  Domi
 Trabaje un año en el proyecto de domiciliaciones desarrollando servicios sencillos y dando soporte a la aplicación. 
 
-###  Azteca 360
+###  Azteca 360 02/2019 – 03/2023
 (Detalla el proceso desde el análisis hasta el mantenimiento, incluyendo cualquier problema que surgió y cómo lo resolviste.) 
 Posteriormente participe en un proyecto nuevo que es una plataforma de pagos que expone medios de pago para instituciones internas y externas al grupo, dentro de mis funciones eran realizar servicios, realizar pruebas y estaba encargado de administrar las API Proxies del proyecto desde el análisis, creación, pruebas, liberación y mantenimiento así como el acompañamiento a los clientes que se fueron integrando. Los últimos meses trabaje en una migración de Tibco a spring boot. 
 Las tecnologías que utilice para el desarrollo de los microservicios son Spring Boot con Java 8, para la documentación swagger y para las pruebas JUnit, Docker y JMeter de lado de APIGEE ocupaba swagger con open api 2.0 para la creación de yaml, apigee, utilizábamos la estrategia de api first. En ambas tareas utilizaba git para el manejo de versiones y la integracion continua, asi como jira y confluence para el manejo de las historias de usuraio. 
 
-###  Kairos (Santanter)
+###  Kairos (Santanter) 05/2023 – 03/2025
 Trabajé desarrollando microservicios con Spring Boot 3 y Java 17 en un proyecto de crédito. Los servicios que desarrollé incluyen un microservicio para la generación de contratos, una librería para el manejo de errores, e implementamos Kafka para la mejora de los tiempos de respuesta de los servicios de una aplicación de solicitud de tarjeta de crédito. (Explicar por qué se eligió Kafka, cómo se implementó y los beneficios obtenidos.)
+
+###  WIZELINE (GRUPO SALINAS) 05/2025 – 03/2026
+Desarrollé de una funcionalidad de monitoreo basada en Kafka, permitiendo la captura y persistencia de respuestas de error para análisis posterior. Posteriormente, en el proyecto de Shopin Baz, asumí la responsabilidad de la certificación del ecosistema backend, donde gestioné la resolución de vulnerabilidades críticas detectadas por Checkmarx y aseguré el cumplimiento de estándares normativos mediante la documentación técnica rigurosa en plataformas institucionales.
 
 ### Ejemplos de retos en mi carrera
 Aprender y capacitarme en nuevas tecnologías son retos importantes en mi carrera pero es algo que me gusta hacer, por ejemplo, con APIGEE nos dieron una capacitación muy básica y tuve que leer mucho la documentación para entender mejor los procesos. 
@@ -41,14 +44,14 @@ Aprender y capacitarme en nuevas tecnologías son retos importantes en mi carrer
 >Paradigma de programación que parte del concepto de "objetos" como base.
 
 4 pilares de la POO
-- Abstracción: Es la capacidad de obtener la información relevante para resolver un problema.
-- Encapsulamiento: Es la habilidad de poder decidir las partes que se expondrán a hacia otras entidades. Este pilar apunta a ocultar o publicar atributos o métodos dependiendo del caso.
-- Polimorfismo: Construir metodos con el mismo nombre pero comportamiento diferente.
+- Abstracción: Es el proceso de identificar las características esenciales de un objeto, ignorando los detalles de implementación irrelevantes para el sistema. Se logra mediante el uso de Interfaces y Clases Abstractas, permitiendo enfocarnos en el "qué hace" un objeto en lugar del "cómo lo hace".
+- Encapsulamiento: Es el ocultamiento del estado interno de un objeto, obligando a que toda interacción se realice a través de métodos públicos (interfaz del objeto). Su objetivo principal es la integridad de los datos y la reducción del acoplamiento.
+- Polimorfismo: Capacidad de una entidad (método u objeto) de referirse a instancias de distintos tipos o presentar diferentes comportamientos bajo un mismo nombre.
     Por lo general diremos que existen 3 tipos de polimorfismo:
-  - Sobrecarga: El más conocido y se aplica cuando existen funciones con el mismo nombre en clases que son completamente independientes una de la otra.
-  - Paramétrico: Existen funciones con el mismo nombre pero se usan diferentes parámetros (nombre o tipo). Se selecciona el método dependiendo del tipo de datos que se envíe.
-  - Inclusión: Es cuando se puede llamar a un método sin tener que conocer su tipo, así no se toma en cuenta los detalles de las clases especializadas, utilizando una interfaz común.
-- Herencia: Es la capacidad de transferir características propias como atributos y métodos de una clase a otra. (Reutilizar código).
+  - Sobrecarga: Definir múltiples métodos con el mismo nombre en la misma clase, pero con diferente firma (distinto número o tipo de parámetros). Se resuelve en tiempo de compilación.
+  - Paramétrico: En Java, esto se conoce principalmente como Generics. Permite definir clases o métodos que operan sobre tipos de datos genéricos sin comprometerse con uno específico hasta su instanciación.
+  - Sobreescritura: Una subclase proporciona una implementación específica de un método que ya está definido en su clase padre o interfaz.
+- Herencia: Mecanismo que permite crear nuevas clases (subclases) a partir de clases existentes (superclases), estableciendo una relación de jerarquía. (Reutilizar código).
 
 **Modificadores de acceso**
 
@@ -58,12 +61,35 @@ Aprender y capacitarme en nuevas tecnologías son retos importantes en mi carrer
 |Default  |✔|✔|✘|✘|
 |Protected|✔|✔|✔/✘|✘|
 |Public   |✔|✔|✔|✔|
-
+> Protected: El detalle técnico es que permite el acceso a subclases incluso si están en paquetes diferentes, pero solo a través de la herencia (no por instancia directa).
 
 **Colecciones**: 
 - **List**: Lista ordenada de objetos.
 - **Set**: Coleccion desordenada de objetos unicos.
 - **Map**: Coleccion llave valor.
+
+***1. Interfaz Collection***
+Es la raíz de la jerarquía. Define las operaciones básicas como add(), remove(), size(), y contains().
+> Sub-interfaces principales: List, Set, Queue.
+
+***2. Interfaz List***
+Define una colección ordenada (por índice) que permite elementos duplicados.
+> Implementaciones clave: ArrayList, LinkedList, Vector.
+
+***3. Interfaz Set***
+Una colección que no permite elementos duplicados. Modela la abstracción matemática de un conjunto.
+Sub-interfaz SortedSet: Para conjuntos que garantizan un orden (ej. TreeSet).
+> Implementaciones clave: HashSet, LinkedHashSet.
+
+***4. Interfaz Queue (Cola)***
+Diseñada para retener elementos antes de ser procesados, siguiendo generalmente el principio FIFO (First-In-First-Out).
+Sub-interfaz Deque: Una cola de doble terminación (permite insertar/eliminar por ambos extremos).
+> Implementaciones clave: PriorityQueue, ArrayDeque.
+
+***5. Interfaz Map***
+¡Ojo aquí! En las entrevistas suelen preguntar esto: Map no hereda de Collection. Es una interfaz independiente porque opera con pares llave-valor.
+Sub-interfaz SortedMap: Mantiene las llaves ordenadas.
+> Implementaciones clave: HashMap, TreeMap, LinkedHashMap.
 
 
 **¿Qué es una lambda?**
