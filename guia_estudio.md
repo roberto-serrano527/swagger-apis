@@ -64,9 +64,6 @@ Aprender y capacitarme en nuevas tecnologías son retos importantes en mi carrer
 > Protected: El detalle técnico es que permite el acceso a subclases incluso si están en paquetes diferentes, pero solo a través de la herencia (no por instancia directa).
 
 **Colecciones**: 
-- **List**: Lista ordenada de objetos.
-- **Set**: Coleccion desordenada de objetos unicos.
-- **Map**: Coleccion llave valor.
 
 ***1. Interfaz Collection***
 Es la raíz de la jerarquía. Define las operaciones básicas como add(), remove(), size(), y contains().
@@ -93,29 +90,56 @@ Sub-interfaz SortedMap: Mantiene las llaves ordenadas.
 
 
 **¿Qué es una lambda?**
-Una lambda es una función anónima o expresión que se puede definir sin necesidad de un nombre, utilizada principalmente para simplificar la escritura de código en ciertos contextos donde solo se necesita una pequeña función, como en el manejo de eventos, filtros o iteraciones sobre colecciones.
+Es una función anónima (sin nombre) que permite tratar la funcionalidad como un argumento de método o el código como datos.
 - Se introdujeron a partir de Java 8
 
 **Supplier**: Es una interfaz funcional que no recibe argumentos y devuelve un resultado de tipo T. Se utiliza para generar valores de forma perezosa o diferida. La interfaz Supplier 
 tiene un único método llamado get() que devuelve un valor de tipo T.
+> Ejemplo: Uso de Optional.orElseGet(() -> new Resource()). A diferencia de orElse(), el Supplier solo se ejecuta si el Optional está vacío (Lazy Evaluation).
 
 **Consumer**: Es una interfaz funcional que toma un argumento de tipo T y no devuelve ningún resultado. Se utiliza para realizar operaciones con el objeto de tipo T, como imprimirlo 
 en la consola o almacenarlo en una base de datos. La interfaz Consumer tiene un único método llamado accept(T t). Ejem. forEach() para realizar una acción en cada elemento, como imprimir.
+> Ejemplo: list.forEach(System.out::println); (Aquí también puedes mencionar el uso de Method References ::).
 
 **Predicate**: Es una interfaz funcional que toma un argumento de tipo T y devuelve un valor booleano. Se utiliza para evaluar una condición sobre el objeto de tipo T. 
 La interfaz Predicate tiene un único método llamado test(T t). Ejem. el método filter() para filtrar elementos de un Stream basándose en una condición.
+> Ejemplo: stream.filter(user -> user.getAge() > 18).
 
 **Function**: Es una interfaz funcional que toma un argumento de tipo T y devuelve un resultado de tipo R. Se utiliza para transformar objetos de tipo T en objetos de tipo R. 
 La interfaz Function tiene un único método llamado apply(T t). Ejem. el método map() para transformar elementos de un Stream, como convertir cadenas a sus longitudes.
+> Ejemplo: stream.map(String::toUpperCase).
 
 
 **¿Qué es Java Stream?**
 En la versión 8 de Java se incluyó un API que facilitaba en gran medida el trabajo con colecciones. Este nos permite realizar operaciones sobre la colección, como por ejemplo buscar, 
 filtrar, reordenar, reducir, etc…
+> Un Stream no modifica la fuente original; genera un nuevo resultado o una nueva vista de los datos.
+Tipos de Operaciones
+
+**Para la entrevista, clasifica las operaciones así:**
+Operaciones Intermedias: Devuelven un nuevo Stream. Son "lazy".
+filter(Predicate): Filtra elementos.
+map(Function): Transforma cada elemento.
+sorted(): Ordena los elementos.
+distinct(): Elimina duplicados.
+
+**Operaciones Terminales: Inician el procesamiento y cierran el Stream.**
+collect(): Transforma el Stream a una colección (List, Set, Map).
+forEach(Consumer): Itera sobre los resultados.
+reduce(): Combina elementos en un solo valor.
+count(): Retorna el número de elementos.
+
+**Pregunta de examen: ¿Cuál es la diferencia entre map() y flatMap()?**
+Respuesta: map transforma un elemento en otro. flatMap se usa cuando cada elemento genera un Stream y quieres "aplanar" todos esos sub-streams en uno solo (ej. convertir una lista de listas en una sola lista plana).
 
 **static**
-La directiva static permite el acceso a métodos y variables de clase sin la necesidad de instanciar un objeto de dicha clase
-✍
+La directiva static permite el acceso a métodos y variables de clase sin la necesidad de instanciar un objeto de dicha clase.
+Static significa que el miembro (método o variable) pertenece a la clase en lugar de a una instancia específica.
+
+- Variables Estáticas: Existe una sola copia de la variable para todas las instancias. Se usa comúnmente para constantes o contadores globales.
+
+- Métodos Estáticos: Pueden ser llamados sin crear un objeto.
+ - Restricción: No pueden acceder a miembros de instancia (this o super) porque no están asociados a ningún objeto.
 
 **Novedades de JAVA 8**
 - Lambdas
