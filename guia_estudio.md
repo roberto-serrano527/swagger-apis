@@ -94,19 +94,19 @@ Es una función anónima (sin nombre) que permite tratar la funcionalidad como u
 - Se introdujeron a partir de Java 8
 
 **Supplier**: Es una interfaz funcional que no recibe argumentos y devuelve un resultado de tipo T. Se utiliza para generar valores de forma perezosa o diferida. La interfaz Supplier 
-tiene un único método llamado get() que devuelve un valor de tipo T.
+tiene un único método llamado `get()` que devuelve un valor de tipo T.
 > Ejemplo: Uso de Optional.orElseGet(() -> new Resource()). A diferencia de orElse(), el Supplier solo se ejecuta si el Optional está vacío (Lazy Evaluation).
 
 **Consumer**: Es una interfaz funcional que toma un argumento de tipo T y no devuelve ningún resultado. Se utiliza para realizar operaciones con el objeto de tipo T, como imprimirlo 
-en la consola o almacenarlo en una base de datos. La interfaz Consumer tiene un único método llamado accept(T t). Ejem. forEach() para realizar una acción en cada elemento, como imprimir.
+en la consola o almacenarlo en una base de datos. La interfaz Consumer tiene un único método llamado `accept(T t)`. Ejem. forEach() para realizar una acción en cada elemento, como imprimir.
 > Ejemplo: list.forEach(System.out::println); (Aquí también puedes mencionar el uso de Method References ::).
 
 **Predicate**: Es una interfaz funcional que toma un argumento de tipo T y devuelve un valor booleano. Se utiliza para evaluar una condición sobre el objeto de tipo T. 
-La interfaz Predicate tiene un único método llamado test(T t). Ejem. el método filter() para filtrar elementos de un Stream basándose en una condición.
+La interfaz Predicate tiene un único método llamado `test(T t)`. Ejem. el método filter() para filtrar elementos de un Stream basándose en una condición.
 > Ejemplo: stream.filter(user -> user.getAge() > 18).
 
 **Function**: Es una interfaz funcional que toma un argumento de tipo T y devuelve un resultado de tipo R. Se utiliza para transformar objetos de tipo T en objetos de tipo R. 
-La interfaz Function tiene un único método llamado apply(T t). Ejem. el método map() para transformar elementos de un Stream, como convertir cadenas a sus longitudes.
+La interfaz Function tiene un único método llamado `apply(T t)`. Ejem. el método map() para transformar elementos de un Stream, como convertir cadenas a sus longitudes.
 > Ejemplo: stream.map(String::toUpperCase).
 
 
@@ -376,3 +376,14 @@ Es un token utilizado para la autenticación de usuarios.
 
 **¿Cual es la diferencia entre jpa y hibernate?**
     Hibernate sirve para el mapeo objeto-relacional (ORM) facilita el mapeo de atributos entre una base de datos relacional tradicional y el modelo de objetos de una aplicación
+
+**Idempotencia**
+	- **Definición de idempotencia:** La idempotencia es una propiedad de una operación en matemáticas e informática que hace que ejecutar la misma solicitud varias veces produzca exactamente el mismo estado y resultado del sistema que ejecutarla una sola vez.
+	- Métodos idempotentes (GET, PUT, DELETE)
+	- Métodos no idempotentes (POST, PATCH)
+	- Hacer que un servicio sea idempotente: El cliente genera un UUID único y lo envía en los encabezados HTTP; esto es fundamental para evitar duplicados (como cargos dobles o registros repetidos) cuando ocurren fallos de red y el cliente reintenta la petición.
+	
+**Que es una interfaz funcional?**
+ 	- Es una interfaz que tiene exactamente un método abstracto. Se utiliza como el pilar fundamental para la programación funcional.
+	- Para asegurarte de que cumple esta regla, se utiliza la anotación `@FunctionalInterface`. Si alguien intenta agregar un segundo método abstracto por error, el compilador generará un fallo.
+
