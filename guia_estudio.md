@@ -378,12 +378,14 @@ Es un token utilizado para la autenticación de usuarios.
     Hibernate sirve para el mapeo objeto-relacional (ORM) facilita el mapeo de atributos entre una base de datos relacional tradicional y el modelo de objetos de una aplicación
 
 **Idempotencia**
-	- **Definición de idempotencia:** La idempotencia es una propiedad de una operación en matemáticas e informática que hace que ejecutar la misma solicitud varias veces produzca exactamente el mismo estado y resultado del sistema que ejecutarla una sola vez.
-	- Métodos idempotentes (GET, PUT, DELETE)
-	- Métodos no idempotentes (POST, PATCH)
-	- Hacer que un servicio sea idempotente: El cliente genera un UUID único y lo envía en los encabezados HTTP; esto es fundamental para evitar duplicados (como cargos dobles o registros repetidos) cuando ocurren fallos de red y el cliente reintenta la petición.
+ - **Definición de idempotencia:** La idempotencia es una propiedad de una operación en matemáticas e informática que hace que ejecutar la misma solicitud varias veces produzca exactamente el mismo estado y resultado del sistema que ejecutarla una sola vez.
+ - Métodos idempotentes (GET, PUT, DELETE)
+ - Métodos no idempotentes (POST, PATCH)
+ - Hacer que un servicio sea idempotente: El cliente genera un UUID único y lo envía en los encabezados HTTP; esto es fundamental para evitar duplicados (como cargos dobles o registros repetidos) cuando ocurren fallos de red y el cliente reintenta la petición.
 	
 **Que es una interfaz funcional?**
- 	- Es una interfaz que tiene exactamente un método abstracto. Se utiliza como el pilar fundamental para la programación funcional.
-	- Para asegurarte de que cumple esta regla, se utiliza la anotación `@FunctionalInterface`. Si alguien intenta agregar un segundo método abstracto por error, el compilador generará un fallo.
+ - Es una interfaz que tiene exactamente un método abstracto. Se utiliza como el pilar fundamental para la programación funcional.
+ - Para asegurarte de que cumple esta regla, se utiliza la anotación `@FunctionalInterface`. Si alguien intenta agregar un segundo método abstracto por error, el compilador generará un fallo.
+
+
 
